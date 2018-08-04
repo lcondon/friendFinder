@@ -22,6 +22,7 @@ router.post('/', function (req, res, next) {
         friendScore1 += parseInt(friend.scores[i]);
     }
     console.log(friendScore1);
+    if (allFriends.length > 1) {
     for (var i = 0; i < allFriends.length; i++) {
         if (allFriends[i].name !== friend.name) {
             var tempScore = 0;
@@ -36,6 +37,9 @@ router.post('/', function (req, res, next) {
     }
     console.log(friend2);
     res.json(friend2);
+} else {
+    res.json(false);
+}
 })
 
 module.exports = router;
