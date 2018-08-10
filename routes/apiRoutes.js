@@ -21,7 +21,9 @@ app.post('/api/friends', function (req, res, next) {
         friend.scores += parseInt(req.body['scores[]'][i]);
     };
 
-    var friend2 = {};
+    var friend2 = {
+        scores: 0
+    };
 
     dbase.Friends.create(friend)
         .then(function(){        })
